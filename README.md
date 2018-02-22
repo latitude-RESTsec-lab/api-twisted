@@ -1,6 +1,6 @@
 # Python3 + Twisted API 
 
-API to handle SIGRH data using the Python Twisted framework.
+Experimental API to handle SIGRH data using the Python Twisted framework.
 
 
 ## Dev environment setup
@@ -25,7 +25,7 @@ curl http://localhost:8000/api/servidores
 
 ## Program configuration
 
-Some program configurations must be set up in configuration file (see an sample [config.model.json]) and used as a input to the program startup. So, the initialization command should be like this:
+Some program configurations must be set up in configuration file (see an sample [config.model.json](config.model.json)) and used as a input to the program startup. So, the initialization command should be like this:
 
 ```shell
 program-name --config CONFIG_FILE_NAME 
