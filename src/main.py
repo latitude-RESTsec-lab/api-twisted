@@ -8,6 +8,7 @@ import os
 import json
 
 # import controllers.pessoal as con
+from controllers.pessoal import Employee
 
 """
 check Storm ORM + Twisted
@@ -70,5 +71,5 @@ if __name__ == '__main__':
 
     # starting the web server
     # app.run(debug=args.debug, host='0.0.0.0', port=server_port, threaded=True, ssl_context=ssl_config)
-    # endpoints.serverFromString(reactor, "tcp:8080").listen(server.Site(Counter()))
-    # reactor.run()
+    endpoints.serverFromString(reactor, "tcp:8080").listen(server.Site(Employee()))
+    reactor.run()
