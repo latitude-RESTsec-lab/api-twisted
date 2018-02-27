@@ -1,4 +1,4 @@
-# Python3 + Twisted API 
+# Python3 + Twisted
 
 Experimental API to handle SIGRH data using the Python Twisted framework.
 
