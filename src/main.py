@@ -8,7 +8,7 @@ import os
 import json
 
 # import controllers.pessoal as con
-from controllers.pessoal import Employees, Employee
+from controllers.pessoal import Employees, EmployeeRoot
 
 """
 check Storm ORM + Twisted
@@ -71,9 +71,12 @@ if __name__ == '__main__':
 
     # configuring and starting the web server
     # app.run(debug=args.debug, host='0.0.0.0', port=server_port, threaded=True, ssl_context=ssl_config)
+    api_root = resource.Resource()
+    api_root.putChild(b"servidores", Employees())
+    api_root.putChild(b"servidor", EmployeeRoot())
     root = resource.Resource()
-    root.putChild(b"api/servidores", Employees())
-    root.putChild(b"api/servidor/", Employee())
+    root.putChild(b"api", api_root)
+
     site = server.Site(root)
     endpoint_spec = "tcp:{}".format(server_port)
     server = endpoints.serverFromString(reactor, endpoint_spec)

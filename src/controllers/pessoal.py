@@ -22,8 +22,40 @@ class Employees(resource.Resource):
         return content.encode("utf-8")
 
 
-class Employee(resource.Resource):
+class EmployeeRoot(resource.Resource):
     """Serve one employee operations.
     """
+
+    def __init__(self):
+        print("inicializou Employee.")
+        pass
+
+    def  getChildWithDefault(self, name, request):
+        print("executou o getChild do Employee.")
+        if name == '':
+            return self
+        if not isinstance(name, int):
+            print ("o child entendeu que nao eh INT.")
+            return "Not found -- DEVERIA SER INT"
+        return EmployeeResource(int(name))
+
     def render_GET(self, request):
-        return "hello world from the employee: {}".format(request)
+        return "obs: nao atender GET de employee: {}".format(request)
+
+    def render_DELETE(self, request):
+        return "obs: nao atender DELETE de employee: {}".format(request)
+
+
+class EmployeeResource(resource.Resource):
+    def __init__(self, employee_id):
+        resource.Resource.__init__(self)
+        print ("employee_id={}".format(employee_id))
+        self.employee_id = employee_id
+
+    def render_GET(self, request):
+        print ("GET request={}".format(request))
+        return "<html><body><pre>%s</pre></body></html>" % self.employee_id
+
+    def render_DELETE(self, request):
+        print ("DELETE request={}".format(request))
+        return "hello DELETE world from the employee: {}".format(request)
