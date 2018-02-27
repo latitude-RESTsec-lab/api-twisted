@@ -36,8 +36,5 @@ in the configuration file, we need to set database conection and web server para
 
 ## Some useful links
 
-https://stackoverflow.com/questions/5458631/whats-so-cool-about-twisted
-
-## Other issues
-
-https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Accept
+* [Twisted overview @ stackoverflow](https://stackoverflow.com/questions/5458631/whats-so-cool-about-twisted)
+* [HTTP header 'accept' documentation @ Mozilla](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Accept)
