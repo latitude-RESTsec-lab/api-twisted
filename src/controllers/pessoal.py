@@ -1,4 +1,4 @@
-from twisted.web import server, resource
+from twisted.web import server, resource, client
 #from twisted.internet import reactor, endpoints
 
 class Employees(resource.Resource):
@@ -35,11 +35,12 @@ class EmployeeRoot(resource.Resource):
         if name == '':
             return self
         if not isinstance(name, int):
-            print ("o child entendeu que nao eh INT.")
-            return "Not found -- DEVERIA SER INT"
+            print("o child entendeu que nao eh INT.")
+            return self
         return EmployeeResource(int(name))
 
     def render_GET(self, request):
+        print("passou pelo GET do base")
         return "obs: nao atender GET de employee: {}".format(request)
 
     def render_DELETE(self, request):
