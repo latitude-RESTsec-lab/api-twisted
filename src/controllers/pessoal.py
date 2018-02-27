@@ -26,6 +26,8 @@ class EmployeeRoot(resource.Resource):
     """Serve one employee operations.
 
        Using this link as example: https://twistedmatrix.com/documents/current/web/howto/web-in-60/dynamic-dispatch.html
+
+       Look this too: http://twistedmatrix.com/documents/current/web/howto/using-twistedweb.html
     """
 
     def __init__(self):
