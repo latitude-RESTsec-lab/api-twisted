@@ -28,7 +28,7 @@ curl http://localhost:8000/api/servidores
 Some program configurations must be set up in configuration file (see an sample [config.model.json](config.model.json)) and used as a input to the program startup. So, the initialization command should be like this:
 
 ```shell
-program-name --config CONFIG_FILE_NAME 
+python3 main.py --config CONFIG_FILE_NAME 
 ```
 
 Notes:
